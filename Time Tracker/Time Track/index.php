@@ -498,7 +498,7 @@
         .header {
             padding: 24px;
             text-align: center;
-            background: #275a8d;
+            background: #345474;
             color: white;
             font-size: 30px;
             font-family: 'Josefin Sans', sans-serif;
