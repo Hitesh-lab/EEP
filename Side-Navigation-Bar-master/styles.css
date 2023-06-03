@@ -50,7 +50,11 @@ body{
 }
 
 .wrapper .sidebar ul li:hover{
-  background-color: #594f8d;
+  background-color: #6872aa;
+}
+
+.wrapper .sidebar ul li.selected{
+  background-color: #327cc2;
 }
     
 .wrapper .sidebar ul li:hover a{
