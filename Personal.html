@@ -32,12 +32,11 @@
             <li><a href="caloriesTracker/index.html"><i class="fas fa-project-diagram"></i>Health Tracker</a></li>
             <li><a href="tasktracker/iframe.html"><i class="fas fa-user"></i>Task Tracker</a></li>
             <li><a href="NotesMaker/main.html"><i class="fas fa-address-card"></i>Notes Maker</a></li>
-            <li><a href="https://photos.google.com/login" target="_blank"><i class="fas fa-user"></i>Photo Album</a></li>
+            <li><a href="googleAPI/index.html" target="_blank"><i class="fas fa-user"></i>Photo Album</a></li>
 
         </ul>
     </div>
     <div class="main_content">
-        <!-- <div class="header">Enhanced Employee Portal</div>   -->
         <div class="info">
           <style>
             .grid { 
@@ -53,20 +52,49 @@
             }
             </style>
             <main class="grid">
-              <a title="My Playlist" href="SPOTIFY API/index.html"><img src="img/music.png" alt="Sample photo"></a>
-              <a title="Health Tracker" href="caloriesTracker/index.html"><img src="img/health.png" alt="Sample photo"></a>
-              <a title="Task Tracker" href="tasktracker/iframe.html"><img src="img/tasktracker.png" alt="Sample photo"></a>
-              <a title="NotePad" href="NotesMaker/main.html"><img src="img/notepad.png" alt="Sample photo"></a>
-              <a title="Google Photos" href="https://photos.google.com/login" target="_blank"><img src="img/Photoalbum.png" alt="Sample photo"></a>
-
+              <button><a title="My Playlist" href="SPOTIFY API/index.html"><img src="img/music.png" alt="Sample photo"></a></button>
+              <button><a title="Health Tracker" href="caloriesTracker/index.html"><img src="img/health.png" alt="Sample photo"></a></button>
+              <button><a title="Task Tracker" href="tasktracker/iframe.html"><img src="img/tasktracker.png" alt="Sample photo"></a></button>
+              <button><a title="NotePad" href="NotesMaker/main.html"><img src="img/notepad.png" alt="Sample photo"></a></button>
+              <button onclick="signIn()"><a title="Google Photos" target="_blank"><img src="img/Photoalbum.png" alt="Sample photo"></a></button>
             
               
             </main>
-          <!-- <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
-          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div> -->
-      </div>
+         </div>
     </div>
 </div>
 
 </body>
+<script>
+  function signIn(){
+    // Google's OAuth 2.0 endpoint for requesting an access token
+  var oauth2Endpoint = 'https://accounts.google.com/o/oauth2/v2/auth';
+ 
+  // Create <form> element to submit parameters to OAuth 2.0 endpoint.
+  var form = document.createElement('form');
+  form.setAttribute('method', 'GET'); // Send as a GET request.
+  form.setAttribute('action', oauth2Endpoint);
+ 
+  // Parameters to pass to OAuth 2.0 endpoint.
+  var params = {'client_id': '618413512154-o3pbt1rrea51mdg5d5ifp2cm3fr3jkqf.apps.googleusercontent.com',
+                'redirect_uri': 'https://photos.google.com/',
+                'response_type': 'token',
+                'scope':'https://www.googleapis.com/auth/userinfo.profile',
+                'include_granted_scopes': 'true',
+                'state': 'API Connection'};
+ 
+  // Add form parameters as hidden input values.
+  for (var p in params) {
+    var input = document.createElement('input');
+    input.setAttribute('type', 'hidden');
+    input.setAttribute('name', p);
+    input.setAttribute('value', params[p]);
+    form.appendChild(input);
+  }
+ 
+  // Add form to page and submit it to open the OAuth 2.0 endpoint.
+  document.body.appendChild(form);
+  form.submit();
+}
+</script>
 </html>

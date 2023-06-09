@@ -2,17 +2,47 @@
 <html lang="en">
  
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Spotify Web API Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
- 
+
 <body>
+    <style>
+        body {
+            background-image: url('blue.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .header {
+            padding: 24px;
+            text-align: center;
+            background: #345474;
+            color: white;
+            font-size: 30px;
+            font-family: 'Josefin Sans', sans-serif;
+            position: static;
+
+        }
+    </style>
+    <div class="header">
+        <h2 style="float: left; font-size: 50px; font-weight: 300;"><a style="color: white" href="../index.html">SAP</a></h2>
+        <p style="font-family: 'Josefin Sans', sans-serif; font-weight: 300;">Enhanced Employee Portal</p>
+    </div>
+    <h4 style="background-color:345474"><strong> &nbsp;<a href="../personal.html">Go Back <span>&#8617;</span></a> &nbsp;</strong></h4>
+
     <h1>Welcome to Profile Page</h1>
     <h2 id="name">Your Full Name is:</h2>
     <img id="image"/>
     <button onclick="logout()">Logout</button>
+
+    <p id = "result"></p>
+   <a href="https://www.google.com" target="_blank"><button>Click to Redirect to your photos gallery</button></a>
 </body>
 <script>
     // Parse query string to see if page request is coming from OAuth 2.0 server.
